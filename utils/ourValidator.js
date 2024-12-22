@@ -36,7 +36,8 @@ const amountRules = [
     check('amount', 'amount is required')
         .notEmpty()
         .isNumeric().withMessage('amount must be a number')
-        .custom((value) => value >= 100).withMessage('amount must be greater than 100'),
+        .custom((value) => value >= 100).withMessage('amount must be greater than 100')
+        .custom((value) => value <= 1000).withMessage('amount must be at most 1000'),
 ];
 
 
